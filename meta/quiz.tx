@@ -1,0 +1,33 @@
+Program:
+  '@quiz' description=Sentence
+    questions+=Question
+;
+
+Question:
+  '?' question=Sentence
+   answers+=Answer
+;
+
+QuestionText:
+  (Sentence | Modifier)+
+;
+
+Modifier:
+  '@blank' 
+;
+
+Answer:
+  atype=AnswerType atext=Sentence
+;
+
+AnswerType:
+  ('+' | '-')
+;
+
+Comment:
+  /\/\/.*$/
+;
+
+Sentence:
+  /.+/
+;
