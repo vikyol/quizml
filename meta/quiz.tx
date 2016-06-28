@@ -5,7 +5,7 @@ Program:
 
 Question:
   '?' question=Sentence
-   answers+=Answer
+   options+=Option
 ;
 
 QuestionText:
@@ -16,11 +16,11 @@ Modifier:
   '@blank' 
 ;
 
-Answer:
-  atype=AnswerType atext=Sentence
+Option:
+  otype=OptionType otext=Sentence
 ;
 
-AnswerType:
+OptionType:
   ('+' | '-')
 ;
 

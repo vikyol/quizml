@@ -1,0 +1,31 @@
+{
+  "description": "this is a sample quiz",
+  "questions": [
+      {
+        "question": "This is the first question",
+        "options": [
+          {
+            "option": "True",
+            "correct": true
+          },
+          {
+            "option": "False",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "This is the second question",
+        "options": [
+          {
+            "option": "True",
+            "correct": true
+          },
+          {
+            "option": "False",
+            "correct": false
+          }
+        ]
+      }
+  ]
+}

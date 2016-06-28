@@ -1,9 +1,13 @@
 from textx.metamodel import metamodel_from_file
+from jinja2 import Environment, FileSystemLoader
 
-quiz_mm = metamodel_from_file('../meta/quiz.tx')
+def load_quiz_model():
+    # Load the quiz metamodel first
+    quiz_mm = metamodel_from_file('../meta/quiz.tx')
+    # Create the model
+    quiz_model = quiz_mm.model_from_file('../data/quiz.qml')
 
-# Create model
-quiz_model = quiz_mm.model_from_file('../data/quiz.qml')
+    return quiz_model
 
 
 def print_model(model):
@@ -11,10 +15,26 @@ def print_model(model):
 
     for q in model.questions:
         print(q.question)
-        for answer in q.answers:
-            print(answer.atype, answer.atext)
+        for option in q.options:
+            print(option.otype, option.otext)
+
+
+def render_template(quiz_model):
+    env = Environment(loader=FileSystemLoader('../templates'))
+
+    template = env.get_template('json.j2')
+
+    output = template.render(quiz=quiz_model)
+    print(output)
+
+    # to save the results
+    with open("quiz.json", "wb") as fh:
+        fh.write(output.encode())
 
 
 if __name__ == "__main__":
-    print_model(quiz_model)
+    model = load_quiz_model()
+    print_model(model)
+    render_template(model)
+
 

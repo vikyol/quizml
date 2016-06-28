@@ -1,0 +1,21 @@
+{
+  "description": "{{quiz.description}}",
+  "questions": [
+    {%- for q in quiz.questions %}
+      {
+        "question": "{{q.question}}",
+        "options": [
+        {%- for o in q.options %}
+          {
+            "option": "{{o.otext}}",
+            "correct": {% if o.otype == '+' %}true{%else%}false{%endif%}
+          }
+          {%- if loop.last == false %},{%- endif %}
+        {%- endfor %}
+        ]
+      }
+      {%- if loop.last == false %},{%- endif %}
+    {%- endfor %}
+  ]
+}
+
