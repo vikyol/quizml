@@ -11,7 +11,10 @@ def load_quiz_model():
 
 
 def print_model(model):
+    print(model.title)
     print(model.description)
+    for tag in model.tags:
+        print('#'+tag)
 
     for q in model.questions:
         print(q.question)

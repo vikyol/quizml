@@ -1,6 +1,8 @@
 Program:
-  '@quiz' description=Sentence
-    questions+=Question
+  '@quiz' title=Sentence
+  '@desc' description=Sentence
+  '@tags' tags+=Tag[',']
+   questions+=Question
 ;
 
 Question:
@@ -30,4 +32,8 @@ Comment:
 
 Sentence:
   /.+/
+;
+
+Tag:
+  /[\s\w]+/
 ;

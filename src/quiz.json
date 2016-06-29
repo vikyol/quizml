@@ -1,5 +1,5 @@
 {
-  "description": "this is a sample quiz",
+  "description": "multi-choice quiz to to demonstrate qml",
   "questions": [
       {
         "question": "This is the first question",
