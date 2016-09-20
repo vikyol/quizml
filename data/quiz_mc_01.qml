@@ -1,7 +1,11 @@
-@quiz this is a sample multi-choice quiz.
+@quiz this is a sample quiz
+@desc multi-choice quiz to to demonstrate qml
+@tags test, sample tag
 
-? This is a @blank sample question.
-+ simple
-- boring
-- easy
-- good
+ ? This is the first question
+ + True
+ - False
+
+ ? This is the second question
+ + True
+ - False
