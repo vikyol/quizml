@@ -1,5 +1,5 @@
 from quiz import Quiz
-from multichoice import MultichoiceQuiz
+from quiz import MultichoiceQuiz
 
 if __name__ == "__main__":
     quiz = MultichoiceQuiz()
