@@ -37,6 +37,7 @@ class Quiz(metaclass=ABCMeta):
             self._model = meta_quiz.model_from_file(quiz_data)
         return self._model
 
+
     def reload_model(self, quiz_data):
         '''
         Resets and reinitializes the model.
@@ -45,6 +46,7 @@ class Quiz(metaclass=ABCMeta):
         '''
         self._model = None
         return load_model(self, quiz_data)
+
 
     def print_model(self):
         ''' print the quiz model for debugging purposes '''
@@ -57,6 +59,7 @@ class Quiz(metaclass=ABCMeta):
             print(q.question)
             for option in q.options:
                 print(option.otype, option.otext)
+
 
     def render_template(self):
         '''
