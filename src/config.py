@@ -5,7 +5,7 @@ TEMPLATE_FOLDER = '../templates'
 MC_METAMODEL = '../meta/multichoice.tx'
 
 # Syntax description for drag and drop quiz
-DD_METAMODEL = '../meta/DragDrop.tx'
+DD_METAMODEL = '../meta/dragdrop.tx'
 
 Templates = {
     'MC_JSON': 'multichoice.json.j2',

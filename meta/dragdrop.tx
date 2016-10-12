@@ -1,0 +1,39 @@
+Program:
+  '@quiz' title=Sentence
+  '@desc' description=Sentence
+  '@tags' tags+=Tag[',']
+   questions+=Question
+;
+
+Question:
+  '?' target=Sentence
+   draggable=Option
+;
+
+QuestionText:
+  (Sentence | Modifier)+
+;
+
+Modifier:
+  '@blank' 
+;
+
+Option:
+  otype=OptionType otext=Sentence
+;
+
+OptionType:
+  ('+')
+;
+
+Comment:
+  /\/\/.*$/
+;
+
+Sentence:
+  /.+/
+;
+
+Tag:
+  /[\s\w]+/
+;

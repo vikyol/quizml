@@ -1,0 +1,13 @@
+{
+  "description": "{{quiz.description}}",
+  "questions": [
+    {%- for q in quiz.questions %}
+      {
+        "target": "{{q.target}}",
+        "draggable": "{{q.draggable.otext}}"
+      }
+      {%- if loop.last == false %},{%- endif %}
+    {%- endfor %}
+  ]
+}
+
